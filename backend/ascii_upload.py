@@ -20,8 +20,9 @@ def image_to_ascii(image, width=100):
     pixels = image.getdata()
 
     # Create chars with each pixel, pick ASCII_CHARS 
-    # with 10 level of brighness (0 - 9) by floor divid with 25 (gray scale pixel at 255) 
-    ascii_str = ''.join(ASCII_CHARS[pixel // 25] for pixel in pixels)
+    # with 10 level of brighness (0 - 9) by floor divid with 25 (grayscale pixel at 255) 
+    # "min" to ensure its never out of range when grayscale is at 255, whcih will result a 10 in index out of 9
+    ascii_str = ''.join(ASCII_CHARS[min(pixel // 25, len(ASCII_CHARS) - 1)] for pixel in pixels)
 
     # Seperate chars by image width, and concate with '\n' to create the ASCII image
     return '\n'.join(ascii_str[i:i+width] for i in range(0, len(ascii_str), width))

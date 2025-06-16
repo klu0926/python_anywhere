@@ -32,7 +32,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-input[type="file"],
+input[type='file'],
 select {
   padding: 10px;
   border: 1px solid #ccc;
@@ -66,11 +66,12 @@ select {
 }
 
 .preview-container img {
-  max-width: 100%;
+  max-width: 300px;
   height: auto;
   border-radius: 6px;
   margin-top: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
 }
 
 .output-container {
