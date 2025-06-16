@@ -35,3 +35,4 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 # [TEST] This should be auto updated on python anywhere
+# [TEST] This should be auto updated on python anywhere 2
