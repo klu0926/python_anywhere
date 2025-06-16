@@ -14,6 +14,6 @@ def git_webhook():
     subprocess.run(['git', '-C', repo_path, 'pull'])
 
     # Touch the WSGI file to restart the app (important on PythonAnywhere)
-    subprocess.run(['touch', '/var/www/yourusername_pythonanywhere_com_wsgi.py'])
+    subprocess.run(['touch', '/var/www/klu0926_pythonanywhere_com_wsgi.py'])
 
     return 'Code updated and app restarted', 200
