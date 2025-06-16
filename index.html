@@ -4,18 +4,35 @@
     <meta charset="UTF-8" />
     <title>Image to ASCII</title>
     <link rel="stylesheet" href="frontend/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <h1>Image to ASCII Art</h1>
+    <div class="container">
+      <h1>Image to ASCII Art</h1>
 
-    <input type="file" id="fileInput" />
-    <button id="convertBtn">Convert</button>
+      <div class="upload-section">
+        <input type="file" id="fileInput" />
+        
+        <label for="width-selector">Output Width:</label>
+        <select id="width-selector">
+          <option value="100" selected>100</option>
+          <option value="50">50</option>
+          <option value="25">25</option>
+        </select>
 
-    <div id="preview-display" style="display: none">
-      <img id="preview" alt="Preview will appear here" />
+        <button id="convertBtn">Convert</button>
+      </div>
+
+      <div id="preview-display" class="preview-container" style="display: none">
+        <h2>Image Preview</h2>
+        <img id="preview" alt="Image preview will appear here" />
+      </div>
+
+      <div class="output-container">
+        <h2>ASCII Output</h2>
+        <pre id="asciiOutput"></pre>
+      </div>
     </div>
-
-    <pre id="asciiOutput"></pre>
 
     <script src="frontend/js/ascii.js"></script>
   </body>

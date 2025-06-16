@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const convertBtn = document.getElementById('convertBtn');
   const asciiOutput = document.getElementById('asciiOutput');
   const previewDisplay = document.getElementById('preview-display')
+  const widthSelector = document.getElementById('width-selector')
 
   // Show image preview
   fileInput.addEventListener('change', (e) => {
@@ -24,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData();
     // Name the image file 'image'
     formData.append('image', fileInput.files[0]);
+
+    // Get width input from width-selector
+    formData.append('width', widthSelector.value)
 
     // Display for loading
     asciiOutput.textContent = 'Converting...';

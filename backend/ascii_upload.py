@@ -31,13 +31,18 @@ def image_to_ascii(image, width=100):
 def ascii_upload():
     # Get image file from request form data
     file = request.files.get("image")
+
+     # Get the width from formData, convert to int
+    width = request.form.get("width", default=100, type=int)
+
     if not file:
         return jsonify({"error": "No file provided"}), 400
     
     try:
         # open the image with stream
         image = Image.open(file.stream)
-        ascii_art = image_to_ascii(image)
+
+        ascii_art = image_to_ascii(image, width)
         return jsonify({"ascii": ascii_art})
     
     except Exception as e:
