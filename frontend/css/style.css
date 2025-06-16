@@ -88,6 +88,5 @@ select {
   font-size: 12px;
   line-height: 1.2;
   color: #333;
-  max-height: 600px;
   overflow-y: auto;
 }
