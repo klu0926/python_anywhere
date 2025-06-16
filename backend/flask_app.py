@@ -3,6 +3,8 @@ from flask_cors import CORS
 
 # import route handler
 from ascii_upload import ascii_upload
+from git_webhook import git_webhook 
+
 
 # Create Flask App
 app = Flask(__name__)
@@ -16,6 +18,12 @@ CORS(app)
 @app.route("/")
 def home():
     return "Hello world"
+
+# git hub webhook 
+# Trigger then git updated
+@app.route("/webhook", methods=["POST"]) 
+def handle_webhook():
+    return git_webhook()
 
 @app.route("/ascii/upload", methods=["POST"])
 def handle_ascii_upload():
