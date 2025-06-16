@@ -29,7 +29,7 @@ def image_to_ascii(image, width=100):
 
 
 # Return ascii
-def ascii_upload():
+def return_ascii():
     # Get image file from request form data
     file = request.files.get("image")
 

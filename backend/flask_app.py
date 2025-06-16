@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 
 # import route handler
-from ascii_upload import ascii_upload
+from ascii_upload import return_ascii
 from git_webhook import git_webhook 
 
 
@@ -27,7 +27,7 @@ def handle_webhook():
 
 @app.route("/ascii/upload", methods=["POST"])
 def handle_ascii_upload():
-    return ascii_upload()
+    return return_ascii()
 
 
 # Run app if only if in current directory
