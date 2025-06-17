@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const asciiOutput = document.getElementById('asciiOutput');
   const previewDisplay = document.getElementById('preview-display')
   const widthSelector = document.getElementById('width-selector')
+  const copyButton = document.getElementById('output-copy')
+  const copyButtonMessage = document.getElementById('output-copy-message')
 
   // Show image preview
   fileInput.addEventListener('change', (e) => {
@@ -46,4 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
       asciiOutput.textContent = 'Network error or server not reachable.';
     }
   });
+
+
+  // Copy button
+  copyButton.addEventListener('click', () => {
+
+    // Get value from output
+    const text = asciiOutput.textContent
+
+    if (text.trim() === '') return
+
+    // Copy to clipboard
+    navigator.clipboard.write(text).then(() => {
+      // Do something when is copied
+      copyButtonMessage.innerText = 'Copied'
+    }).catch(err => {
+      // Display text
+      copyButtonMessage.innerText = 'Fail to copy'
+    })
+  })
+
 });

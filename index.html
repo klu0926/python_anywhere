@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>Image to ASCII</title>
     <link rel="stylesheet" href="frontend/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -12,7 +15,7 @@
 
       <div class="upload-section">
         <input type="file" id="fileInput" />
-        
+
         <label for="width-selector">Output Width:</label>
         <select id="width-selector">
           <option value="100" selected>100</option>
@@ -29,7 +32,11 @@
       </div>
 
       <div class="output-container">
-        <h2>ASCII Output</h2>
+        <div class="output-top">
+          <h2>ASCII Output</h2>
+          <button id="output-copy">COPY</button>
+          <span id="output-copy-message"></span>
+        </div>
         <pre id="asciiOutput"></pre>
       </div>
     </div>
