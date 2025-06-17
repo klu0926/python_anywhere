@@ -1,8 +1,8 @@
 const BACKEND_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:5000'
+  ? 'http://127.0.0.1:5000'
   : 'https://klu0926.pythonanywhere.com';
 
-  
+
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('fileInput');
   const preview = document.getElementById('preview');
