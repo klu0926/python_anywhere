@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (text.trim() === '') return
 
     // Copy to clipboard
-    navigator.clipboard.write(text).then(() => {
+    navigator.clipboard.writeText(text).then(() => {
       // Do something when is copied
       copyButtonMessage.innerText = 'Copied'
     }).catch(err => {
