@@ -91,3 +91,11 @@ select {
   color: #333;
   overflow-y: auto;
 }
+
+#output-copy-message {
+  color: blue;
+}
+
+#output-copy-message.error {
+  color: red;
+}

@@ -64,9 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Copy to clipboard
     navigator.clipboard.writeText(text).then(() => {
       // Do something when is copied
+      copyButtonMessage.classList.remove('error')
       copyButtonMessage.innerText = 'Copied'
     }).catch(err => {
       // Display text
+      copyButtonMessage.classList.add('error')
       copyButtonMessage.innerText = 'Fail to copy'
     })
   })
